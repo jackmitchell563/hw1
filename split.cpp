@@ -18,6 +18,24 @@ void split(Node*& in, Node*& odds, Node*& evens)
 {
   /* Add code here */
 // WRITE YOUR CODE HERE
+  // idea: reverse traversal through head recursion
+  // note to self: using in->next instead of in omits the first element of in
+
+  if(nullptr != in) split(in->next, odds, evens);
+  else return;
+
+  if(in->value % 2){
+    if(nullptr != odds){
+      in->next = odds;
+    }
+    odds = in;
+  } else {
+    if(nullptr != evens){
+      in->next = evens;
+    }
+    evens = in;
+  }
+  in = nullptr;
 }
 
 /* If you needed a helper function, write it here */
