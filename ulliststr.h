@@ -113,6 +113,8 @@ class ULListStr {
    */
   void clear();
 
+  operator bool(){ return nullptr == this; }
+
  private:
   /** 
    * Returns a pointer to the item at index, loc,
